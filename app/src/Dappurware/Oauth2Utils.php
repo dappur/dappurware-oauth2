@@ -2,7 +2,6 @@
 
 namespace Dappur\Dappurware;
 
-use Abraham\TwitterOAuth\TwitterOAuth;
 use Interop\Container\ContainerInterface;
 
 class Oauth2Utils extends Dappurware
@@ -129,7 +128,7 @@ class Oauth2Utils extends Dappurware
 
     private function getTwitterUser($token, $resourceUrl)
     {
-        $connection = new TwitterOAuth(
+        $connection = new \Abraham\TwitterOAuth\TwitterOAuth(
             $this->settings['oauth2']['twitter']['client_id'],
             $this->settings['oauth2']['twitter']['client_secret'],
             $token->access_token,
@@ -291,7 +290,7 @@ class Oauth2Utils extends Dappurware
 
     private function getTwitterAccessToken()
     {
-        $twConnection = new TwitterOAuth(
+        $twConnection = new \Abraham\TwitterOAuth\TwitterOAuth(
             $this->container->settings['oauth2']['twitter']['client_id'],
             $this->container->settings['oauth2']['twitter']['client_secret']
         );
