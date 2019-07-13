@@ -2,7 +2,7 @@
     "name": "dappur/dappurware-oauth2",
     "description": "Oauth2 support package for the Dappur Framework",
     "keywords": ["dappur", "dappurware", "framework", "oauth2"],
-    "version": "4.0.0",
+    "version": "4.0.1",
     "homepage": "https://github.com/dappur/dappurware",
     "license": "MIT",
     "authors": [
