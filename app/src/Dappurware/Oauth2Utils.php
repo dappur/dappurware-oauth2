@@ -16,8 +16,10 @@ class Oauth2Utils extends Dappurware
         curl_setopt($channel, CURLOPT_HTTPHEADER, array('Accept: application/json'));
         curl_setopt($channel, CURLOPT_HTTPHEADER, $headers);
         $response = curl_exec($channel);
+
         if ($jsonDecode) {
-            return json_decode($response);
+            $test = json_decode($response);
+            return $test;
         }
 
         return $response;
@@ -117,7 +119,6 @@ class Oauth2Utils extends Dappurware
 
     private function getInstagramUser($token)
     {
-
         $userInfo['uid'] = $token->user->id;
         $fullName = explode(' ', $token->user->full_name, 2);
         $userInfo['first_name'] = $fullName[0];
@@ -195,13 +196,12 @@ class Oauth2Utils extends Dappurware
         );
 
         $userInfo['uid'] = $returnedInfo->id;
-        $userInfo['first_name'] = $returnedInfo->firstName;
-        $userInfo['last_name'] = $returnedInfo->lastName;
+        $userInfo['first_name'] = $returnedInfo->localizedFirstName;
+        $userInfo['last_name'] =$returnedInfo->localizedLastName;
 
         if (isset($returnedInfo->emailAddress) && $returnedInfo->emailAddress != "") {
             $userInfo['email'] = $returnedInfo->emailAddress;
         }
-
 
         return $userInfo;
     }
@@ -243,6 +243,7 @@ class Oauth2Utils extends Dappurware
 
     public function getAccessToken($provider)
     {
+
         // Get Access Token
         switch ($provider->slug) {
             case 'twitter':
@@ -282,6 +283,7 @@ class Oauth2Utils extends Dappurware
                     array(),
                     true
                 );
+
                 break;
         }
 
