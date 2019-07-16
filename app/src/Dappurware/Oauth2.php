@@ -82,13 +82,13 @@ class Oauth2 extends Dappurware
         $slug = $provider->slug;
 
         if (!isset($this->container->settings['oauth2'][$provider->slug]['class'])) {
-            throw new \Slim\Exception\SlimException($request, $response);
+            throw new \Exception("Provider class is not defined in settings.");
         }
 
         $className = $this->container->settings['oauth2'][$provider->slug]['class'];
 
         if (!class_exists($className)) {
-            throw new \Slim\Exception\SlimException($request, $response);
+            throw new \Exception("Provider class is not accessible.");
         }
         
         $userInfo = new $className($this->container);
@@ -126,17 +126,16 @@ class Oauth2 extends Dappurware
         $slug = $provider->slug;
 
         if (!isset($this->container->settings['oauth2'][$provider->slug]['class'])) {
-            throw new \Slim\Exception\SlimException($request, $response);
+            throw new \Exception("Provider class is not defined in settings.");
         }
 
         $className = $this->container->settings['oauth2'][$provider->slug]['class'];
         if (!class_exists($className)) {
-            throw new \Slim\Exception\SlimException($this->request, $this->response);
+            throw new \Exception("Provider class is not accessible.");
         }
 
         if (method_exists($className, 'accessToken')) {
             $token = new $className($this->container);
-
             $token = $token->accessToken($provider);
             return $token;
         }
