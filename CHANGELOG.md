@@ -3,6 +3,10 @@
 ## [Unreleased]
 ### No Changes
 
+## [4.0.4] - 2019-07-16
+### Fixed
+- Exception for Oauth failure.
+
 ## [4.0.3] - 2019-07-15
 ### Changed
 - Segnemted Oauth Provider classes to allow custom providers.
@@ -18,7 +22,8 @@
 ### Notes
 I am separating the larger dappurware classes into their own packages as I would like to develop them out a little more.
 
-[Unreleased]: https://github.com/dappur/dappurware-oauth2/compare/v4.0.3...HEAD
+[Unreleased]: https://github.com/dappur/dappurware-oauth2/compare/v4.0.4...HEAD
+[4.0.4]: https://github.com/dappur/dappurware-oauth2/releases/tag/v4.0.3...v4.0.4
 [4.0.3]: https://github.com/dappur/dappurware-oauth2/releases/tag/v4.0.2...v4.0.3
 [4.0.2]: https://github.com/dappur/dappurware-oauth2/releases/tag/v4.0.1...v4.0.2
 [4.0.1]: https://github.com/dappur/dappurware-oauth2/releases/tag/v4.0.0...v4.0.1
