@@ -2,7 +2,7 @@
 
 namespace Dappur\Dappurware\Oauth2\Providers;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 class Twitter extends \Dappur\Dappurware\Oauth2
 {
