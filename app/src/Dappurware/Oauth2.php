@@ -2,7 +2,7 @@
 
 namespace Dappur\Dappurware;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 class Oauth2 extends Dappurware
 {
