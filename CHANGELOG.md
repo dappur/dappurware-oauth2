@@ -3,7 +3,7 @@
 ## [Unreleased]
 ### No Changes
 
-## [4.0.5] - 2020-09-24
+## [4.0.6] - 2020-09-24
 ### Fixed
 - Twitter login
 
