@@ -9,8 +9,8 @@ class Twitter extends \Dappur\Dappurware\Oauth2
     protected function getUser($token, $resourceUrl)
     {
         $connection = new \Abraham\TwitterOAuth\TwitterOAuth(
-            $this->container->settings['oauth2']['twitter']['client_id'],
-            $this->container->settings['oauth2']['twitter']['client_secret'],
+            $this->container->settings['oauth2']['twitter']['api_key'],
+            $this->container->settings['oauth2']['twitter']['api_secret'],
             $token->access_token,
             $token->token_secret
         );
@@ -31,8 +31,8 @@ class Twitter extends \Dappur\Dappurware\Oauth2
     public function accessToken()
     {
         $twConnection = new \Abraham\TwitterOAuth\TwitterOAuth(
-            $this->container->settings['oauth2']['twitter']['client_id'],
-            $this->container->settings['oauth2']['twitter']['client_secret']
+            $this->container->settings['oauth2']['twitter']['api_key'],
+            $this->container->settings['oauth2']['twitter']['api_secret']
         );
 
         $twArray = array();
@@ -41,9 +41,11 @@ class Twitter extends \Dappur\Dappurware\Oauth2
                 "oauth/access_token",
                 [
                     "oauth_token" => $this->request->getParam('oauth_token'),
-                    "oauth_verifier" => $this->request->getParam('oauth_verifier')
+                    "oauth_verifier" => $this->request->getParam('oauth_verifier'),
+                    "include_email" => "true"
                 ]
             );
+            
             $twArray['access_token'] = $accessToken['oauth_token'];
             $twArray['token_secret'] = $accessToken['oauth_token_secret'];
             $twArray['uid'] = $accessToken['user_id'];
