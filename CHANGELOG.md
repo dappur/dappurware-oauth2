@@ -3,6 +3,10 @@
 ## [Unreleased]
 ### No Changes
 
+## [4.0.5] - 2020-09-24
+### Fixed
+- Twitter login
+
 ## [4.0.5] - 2020-01-13
 ### Fixed
 - Changed container from interop to psr
