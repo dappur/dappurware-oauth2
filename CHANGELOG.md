@@ -3,6 +3,10 @@
 ## [Unreleased]
 ### No Changes
 
+## [4.0.7] - 2020-09-24
+### Fixed
+- LinkedIn login
+
 ## [4.0.6] - 2020-09-24
 ### Fixed
 - Twitter login
@@ -30,7 +34,8 @@
 ### Notes
 I am separating the larger dappurware classes into their own packages as I would like to develop them out a little more.
 
-[Unreleased]: https://github.com/dappur/dappurware-oauth2/compare/v4.0.6...HEAD
+[Unreleased]: https://github.com/dappur/dappurware-oauth2/compare/v4.0.7...HEAD
+[4.0.7]: https://github.com/dappur/dappurware-oauth2/releases/tag/v4.0.6...v4.0.7
 [4.0.6]: https://github.com/dappur/dappurware-oauth2/releases/tag/v4.0.5...v4.0.6
 [4.0.5]: https://github.com/dappur/dappurware-oauth2/releases/tag/v4.0.4...v4.0.5
 [4.0.4]: https://github.com/dappur/dappurware-oauth2/releases/tag/v4.0.3...v4.0.4
