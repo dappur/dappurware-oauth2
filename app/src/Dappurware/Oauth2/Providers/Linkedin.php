@@ -15,12 +15,19 @@ class Linkedin extends \Dappur\Dappurware\Oauth2
             true
         );
 
+        $returnedEmail = parent::apiRequest(
+            'https://api.linkedin.com/v2/emailAddress?q=members&projection=(elements*(handle~))',
+            false,
+            array('Authorization: Bearer '. $token->access_token),
+            true
+        );
+
         $userInfo['uid'] = $returnedInfo->id;
         $userInfo['first_name'] = $returnedInfo->localizedFirstName;
         $userInfo['last_name'] =$returnedInfo->localizedLastName;
 
-        if (isset($returnedInfo->emailAddress) && $returnedInfo->emailAddress != "") {
-            $userInfo['email'] = $returnedInfo->emailAddress;
+        if (isset($returnedEmail->elements[0]->{'handle~'}->emailAddress) && $returnedEmail->elements[0]->{'handle~'}->emailAddress != "") {
+            $userInfo['email'] = $returnedEmail->elements[0]->{'handle~'}->emailAddress;
         }
 
         return $userInfo;
